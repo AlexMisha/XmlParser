@@ -40,10 +40,10 @@ interface IXmlParser {
     }
 }
 
-class XmlParser(override val openTag: Regex = Regex(" *<\\w+[\\w+=\"\\w+\" ]+>"),
+class XmlParser(override val openTag: Regex = Regex(" *<\\w+[\\w+=\"\\w+\" \\?*]+>"),
                 override val enclosingTag: Regex = Regex(" *</\\w+>"),
                 override val singleTag: Regex = Regex(" *<\\w+[\\w+=\"\\w+\" ]+/>"),
-                override val attrRx: Regex = Regex("\\w+=\"[\\w ]+\""),
+                override val attrRx: Regex = Regex("\\w+=\"[\\w ]+\\?*\""),
                 override val nameRx: Regex = Regex("\\w+[ >]")) : IXmlParser
 
 fun Sequence<MatchResult>.toAttributes(): Map<String, String> {

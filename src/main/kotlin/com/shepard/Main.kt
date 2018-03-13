@@ -11,8 +11,8 @@ fun main(args: Array<String>) {
         println(it)
         var answerPos = readLine()?.toInt() ?: throw IllegalStateException()
 
-        if (it.answers[--answerPos].correct) println("You are right") else println("You are wrong")
+        if (it.answers.getOrNull(--answerPos)?.correct == true) println("You are right")
+        else println("You are wrong")
         println()
     }
 }
-

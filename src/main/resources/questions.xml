@@ -1,0 +1,6 @@
+<questions>
+    <question text="Test" a="sdfsdf">
+        <answer text="incorrect" correct="false"/>
+        <answer text="correct" correct="true"/>
+    </question>
+</questions>

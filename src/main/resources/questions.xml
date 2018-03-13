@@ -1,6 +1,28 @@
 <questions>
-    <question text="Test" a="sdfsdf">
-        <answer text="incorrect" correct="false"/>
-        <answer text="correct" correct="true"/>
+    <question text="Who is the creator of Kotlin?">
+        <answer text="Google" correct="false"/>
+        <answer text="JetBrains" correct="true"/>
+        <answer text="Oracle" correct="false"/>
+        <answer text="Microsoft" correct="false"/>
+    </question>
+    <question text="Does Kotlin work only for Java?">
+        <answer text="Yes" correct="false"/>
+        <answer text="No" correct="true"/>
+    </question>
+    <question text="Is Kotlin backward compatible?">
+        <answer text="Yes" correct="true"/>
+        <answer text="No" correct="false"/>
+    </question>
+    <question text="Which of these is used to handle null exceptions in Kotlin?">
+        <answer text="Range" correct="false"/>
+        <answer text="Sealed Class" correct="false"/>
+        <answer text="Elvis Operator" correct="true"/>
+        <answer text="Lambda function" correct="false"/>
+    </question>
+    <question text="What is the default behavior of Kotlin classes?">
+        <answer text="All classes are public" correct="false"/>
+        <answer text="All classes are sealed" correct="false"/>
+        <answer text="All classes are final" correct="true"/>
+        <answer text="All classes are abstract" correct="false"/>
     </question>
 </questions>

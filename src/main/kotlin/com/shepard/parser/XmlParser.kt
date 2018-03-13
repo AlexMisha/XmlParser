@@ -43,7 +43,7 @@ interface IXmlParser {
 class XmlParser(override val openTag: Regex = Regex(" *<\\w+[\\w+=\"\\w+\" ]+>"),
                 override val enclosingTag: Regex = Regex(" *</\\w+>"),
                 override val singleTag: Regex = Regex(" *<\\w+[\\w+=\"\\w+\" ]+/>"),
-                override val attrRx: Regex = Regex("\\w+=\"\\w+\""),
+                override val attrRx: Regex = Regex("\\w+=\"[\\w ]+\""),
                 override val nameRx: Regex = Regex("\\w+[ >]")) : IXmlParser
 
 fun Sequence<MatchResult>.toAttributes(): Map<String, String> {
@@ -51,7 +51,7 @@ fun Sequence<MatchResult>.toAttributes(): Map<String, String> {
     forEach {
         val splitted = it.value.split("=")
         if (splitted.size != 2) throw IllegalArgumentException("Splitted contains more than 2 elements: [$splitted]")
-        map[splitted[0]] = splitted[1]
+        map[splitted[0]] = splitted[1].filter { it != '\"' }
     }
     return map
 }
